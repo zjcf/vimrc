@@ -58,11 +58,23 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "}}}
+"fold {{{
+Plugin 'Konfekt/FastFold'
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+"}}}
 "molokai{{{
-Plugin 'molokai'
-set t_Co=256
-colo molokai
-let g:molokai_original = 1
+"Plugin 'molokai'
+"set t_Co=256
+"colo molokai
+"let g:molokai_original = 1
+"}}}
+"solarized{{{
+Plugin 'altercation/vim-colors-solarized'
+set background=dark
+colorscheme solarized
+let g:solarized_underline=0
 "}}}
 "Shougo/neocomplcache{{{
 Plugin 'Shougo/neocomplcache'
@@ -105,6 +117,9 @@ Plugin 'sukima/xmledit'
 "let g:indent_guides_guide_size = 1
 "let g:indent_guides_color_hex_guibg_pattern = 20
 " }}}
+"  phalcon-zephir {{{
+Plugin 'xwsoul/vim-zephir'
+"  }}}
 " nerdtree {{{
 Plugin 'scrooloose/nerdtree'
 let g:NERDChristmasTree = 1
@@ -114,6 +129,26 @@ let g:NERDShowBookMarks = 1
 let g:NERDTreeIgnore = ['\.pyc$']
 noremap <F2> :NERDTreeToggle<cr>
 " }}}
+" nerdcommenter {{{
+Plugin 'scrooloose/nerdcommenter'
+" }}}
+"  emmet {{{
+Plugin 'mattn/emmet-vim'
+let g:user_emmet_leader_key='<C-K>'
+"  }}}
+"  CTLP {{{
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_regexp = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+"  }}}
 
 "}}}
 " Vundle End {{{
