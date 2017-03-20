@@ -96,6 +96,9 @@ inoremap <expr><C-Y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "let g:neocomplcache_enable_auto_select = 1
 "}}}
+"html {{{
+Plugin 'othree/html5.vim'
+"}}}
 "JS {{{
 Plugin 'pangloss/vim-javascript'
 let g:javascript_enable_domhtmlcss=1 
@@ -117,9 +120,6 @@ Plugin 'sukima/xmledit'
 "let g:indent_guides_guide_size = 1
 "let g:indent_guides_color_hex_guibg_pattern = 20
 " }}}
-"  phalcon-zephir {{{
-Plugin 'xwsoul/vim-zephir'
-"  }}}
 " nerdtree {{{
 Plugin 'scrooloose/nerdtree'
 let g:NERDChristmasTree = 1
@@ -132,6 +132,12 @@ noremap <F2> :NERDTreeToggle<cr>
 " nerdcommenter {{{
 Plugin 'scrooloose/nerdcommenter'
 " }}}
+"  tpope/vim-surround {{{
+Plugin 'tpope/vim-surround'
+" }}}
+"  phalcon-zephir {{{
+Plugin 'xwsoul/vim-zephir'
+"  }}}
 "  emmet {{{
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<C-K>'
@@ -258,7 +264,8 @@ let g:php_folding = 1
 """"""""""""""""""""""""""""""
 " => html section
 """"""""""""""""""""""""""""""
-au FileType volt set ft=html
+autocmd BufRead,BufNewFile *.volt set ft=html
+autocmd BufRead,BufNewFile *.vue  set ft=html
 """"""""""""""""""""""""""""""
 " => CSS section
 """"""""""""""""""""""""""""""
